@@ -61,6 +61,6 @@ For inquiries or feedback, contact us at **rxchallenger.app@gmail.com**.
 ---
 
 ## **About the Creator**
-Rx Challenger is developed by **Ahmed Ezzat**, a hospital pharmacist and passionate developer. With years of experience in pharmacy and coding, Ahmed is dedicated to creating tools that empower healthcare professionals.
+Rx Challenger is developed by **Ahmed Ezzat**, a clinical pharmacist and passionate developer. With years of experience in pharmacy and coding, Ahmed is dedicated to creating tools that empower healthcare professionals.
 
 ---
