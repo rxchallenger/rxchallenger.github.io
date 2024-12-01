@@ -45,14 +45,6 @@ Rx Challenger is perfect for:
 
 ---
 
-## **Technology Stack**
-- **Android SDK**: Core development platform.
-- **Firebase**: User authentication and cloud storage.
-- **Scripting Tools**: Integrated tooltips and logic for drug interaction detection.
-- **Design Tools**: Figma and Canva for UI/UX design.
-
----
-
 ## **Future Updates**
 - **Gamification**: Add levels and leaderboards for competitive learning.
 - **Expanded Drug Database**: Include international drug markets.
@@ -62,7 +54,8 @@ Rx Challenger is perfect for:
 
 ## **Call-to-Action**
 *Ready to enhance your pharmacy skills?*  
-**[Download Rx Challenger now](https://play.google.com/store/apps/details?id=com.pharmacycafe.goodrx&pcampaignid=web_share)**  
+**[Download Rx Challenger Android ver.](https://play.google.com/store/apps/details?id=com.pharmacycafe.goodrx&pcampaignid=web_share)**  
+**[Download Rx Challenger Windows ver.]([https://play.google.com/store/apps/details?id=com.pharmacycafe.goodrx&pcampaignid=web_share](https://github.com/rxchallenger/rxchallenger.github.io/raw/6190c6b760deca3a654f4ebdcc6cc895949a5908/download/rxchallenger.exe))**  
 For inquiries or feedback, contact us at **rxchallenger.app@gmail.com**.
 
 ---
