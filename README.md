@@ -54,8 +54,7 @@ Rx Challenger is perfect for:
 
 ## **Call-to-Action**
 *Ready to enhance your pharmacy skills?*  
-**[Download Rx Challenger Android ver.](https://play.google.com/store/apps/details?id=com.pharmacycafe.goodrx&pcampaignid=web_share)**  
-**[Download Rx Challenger Windows ver.](https://github.com/rxchallenger/rxchallenger.github.io/raw/refs/heads/main/download/RxChallenger%20v1.0.0.1.exe)**  
+**[Download Rx Challenger Android ver.](https://play.google.com/store/apps/details?id=com.pharmacycafe.goodrx&pcampaignid=web_share)**   
 For inquiries or feedback, contact us at **RxChallenger.app@gmail.com**.
 
 ---
