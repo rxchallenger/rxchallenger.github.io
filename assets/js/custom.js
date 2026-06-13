@@ -15,8 +15,8 @@
     o(),
     (window.sr = new scrollReveal()),
     e(".menu-trigger").length &&
-      e(".menu-trigger").on("click", function () {
-        e(this).toggleClass("active"), e(".header-area .nav").slideToggle(200);
+      e(".menu-trigger").on("click", function (e) {
+        e.preventDefault(), e.stopPropagation(), e(this).toggleClass("active"), e(".header-area .nav").slideToggle(200);
       }),
     e("a[href*=\\#]:not([href=\\#])").on("click", function () {
       if (
@@ -46,17 +46,19 @@
     e(document).ready(function () {
       e('a[href^="#welcome"]').addClass("active"),
         e(".menu-item").on("click", function (t) {
-          t.preventDefault();
           var o = this,
             n = this.hash,
             i = e(n);
-          e("html, body")
-            .stop()
-            .animate({ scrollTop: i.offset().top }, 500, "swing", function () {
-              (window.location.hash = n),
-                e(".menu-item").removeClass("active"),
-                e(o).addClass("active");
-            });
+          if (i.length) {
+            t.preventDefault();
+            e("html, body")
+              .stop()
+              .animate({ scrollTop: i.offset().top }, 500, "swing", function () {
+                (window.location.hash = n),
+                  e(".menu-item").removeClass("active"),
+                  e(o).addClass("active");
+              });
+          }
         }),
         e(window).scroll(function (t) {
           var o = e(document).scrollTop() + 80;
