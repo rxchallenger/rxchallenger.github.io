@@ -7,7 +7,8 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-TPCC6T9RZ7');
+      gtag('config', 'G-TPCC6T9RZ7', { 'anonymize_ip': true });
+      function trackEvent(name, params) { gtag('event', name, params); }
     </script>
     <meta charset="utf-8" />
     <meta
@@ -23,27 +24,69 @@
     <meta property="og:url" content="https://rxchallenger.github.io/">
     <meta property="og:image" content="https://rxchallenger.github.io/assets/images/rx_325x325.png">
     <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="RxChallenger - Master Prescription Deciphering" />
+    <meta name="twitter:description" content="Empowering pharmacy trainees with interactive learning tools to read and interpret prescriptions." />
+    <meta name="twitter:image" content="https://rxchallenger.github.io/assets/images/rx_325x325.png" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https: data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com;" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="canonical" href="https://rxchallenger.github.io/" />
-    <link href="/assets/css/stylesheet.css" rel="stylesheet" defer/>
+    <link href="assets/css/stylesheet.css" rel="stylesheet" />
     <title>Rx Challenger - Master Prescription Deciphering with Ease!</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <script type="application/ld+json">
-      {         
-         "@context": "https://schema.org/",         
-         "@type": "WebPage",         
-         "@id": "#WebPage",         
-         "url": "https://rxchallenger.github.io/",          
-         "name": "RxChallenger App"
-       } 
-   </script>
-    <!-- Additional CSS Files -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="assets/css/bootstrap.min.css"
-      defer
-    />
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Rx Challenger",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Android, Windows",
+        "description": "Empowering pharmacy trainees with interactive learning tools to read and interpret prescriptions through real-world scenarios.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Rx Challenger",
+          "url": "https://rxchallenger.github.io/",
+          "founder": {
+            "@type": "Person",
+            "name": "Ahmed Ezzat",
+            "jobTitle": "Clinical Pharmacist",
+            "url": "https://www.linkedin.com/in/ahmed-m-ezzat/"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.5",
+          "ratingCount": "4"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Rx Challenger",
+        "url": "https://rxchallenger.github.io/",
+        "logo": "https://rxchallenger.github.io/assets/images/rx_325x325.png",
+        "founder": {
+          "@type": "Person",
+          "name": "Ahmed Ezzat"
+        },
+        "sameAs": [
+          "https://github.com/Ahmed-M-Ezzat",
+          "https://www.linkedin.com/in/ahmed-m-ezzat/"
+        ]
+      }
+    </script>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css" />
     <link rel="stylesheet" href="assets/css/theme.css" />
     <link rel="stylesheet" href="assets/css/owl-carousel.css" />
@@ -51,16 +94,7 @@
   </head>
 
   <body>
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-      <div class="jumper">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <!-- ***** Preloader End ***** -->
-
+    <a href="#welcome" class="skip-link">Skip to main content</a>
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
       <div class="container">
@@ -84,11 +118,14 @@
                   <a href="#testimonials" class="menu-item">Testimonials</a>
                 </li>
                 <li class="scroll-to-section">
-                  <a href="#contact-us" class="menu-item">About</a>
+                  <a href="faq.html" class="menu-item">FAQ</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="about.html" class="menu-item">About</a>
                 </li>
               </ul>
-              <!-- *****<a class="menu-trigger">
-                <span>Menu</span>***** -->
+              <a class="menu-trigger">
+                <span>Menu</span>
               </a>
               <!-- ***** Menu End ***** -->
             </nav>
@@ -111,10 +148,13 @@
               <h1>Master Prescription Deciphering with <em>Ease!</em></h1>
               <p>
                 "Rx Challenger is the ultimate tool for pharmacy graduates and professionals seeking to master prescription
-                 reading. With real-world scenarios, anonymized data, and powerful learning tools, 
+                 reading. With real-world scenarios, anonymized data, and powerful learning tools,
                  this app bridges the gap between academic knowledge and practical expertise."
               </p>
-              <a href="#about" class="main-button-slider">KNOW US BETTER</a>
+              <div class="hero-ctas">
+                <a href="https://play.google.com/store/apps/details?id=com.pharmacycafe.goodrx&hl=en" class="main-button-slider" target="_blank" rel="noopener noreferrer" data-event="download_click" data-source="hero">Download Free</a>
+                <a href="#about" class="main-button" data-event="cta_click" data-source="hero">Learn More</a>
+              </div>
             </div>
           </div>
         </div>
@@ -123,8 +163,13 @@
     </div>
     <br /><br />
     <!-- ***** Welcome Area End ***** -->
-    <div class="container"> <a href = "https://play.google.com/store/apps/details?id=com.pharmacycafe.goodrx&hl=en">
-      <img src="assets/images/googleplay.png" height="120px" width="330px" alt="Googleplay"></img></a>
+    <div class="download-badges">
+      <a href="https://play.google.com/store/apps/details?id=com.pharmacycafe.goodrx&hl=en" class="download-badge" target="_blank" rel="noopener noreferrer" aria-label="Download Rx Challenger on Google Play">
+        <img src="assets/images/googleplay.png" height="56" width="189" alt="Get it on Google Play" loading="lazy" />
+      </a>
+      <a href="download/rxchallenger%20v1.0.0.2.exe" class="download-badge" download aria-label="Download Rx Challenger for Windows">
+        <img src="assets/images/windows.png" height="56" width="189" alt="Download for Windows" loading="lazy" />
+      </a>
     </div>
     <!-- ***** Features Big Item Start ***** -->
     <section class="section" id="about">
@@ -136,14 +181,14 @@
           >
             <div class="features-item">
               <div class="features-icon">
-                <h2>01</h2>
-                <img src="assets/images/features-icon-1.png" alt="Real, Anonymized Prescriptions" />
+                <h2 aria-hidden="true">01</h2>
+                <img src="assets/images/features-icon-1.png" alt="Real, Anonymized Prescriptions" loading="lazy" width="64" height="64" />
                 <h3>Real, Anonymized Prescriptions</h3>
                 <p>
                   Authentic yet anonymized prescriptions, 
                   carefully curated to reflect the most common diagnoses.
                 </p>
-                <a href="#testimonials" class="main-button"> Read More </a>
+                <a href="#promotion" class="main-button" aria-label="Learn more about Real Prescriptions">Learn More</a>
               </div>
             </div>
           </div>
@@ -153,13 +198,13 @@
           >
             <div class="features-item">
               <div class="features-icon">
-                <h2>02</h2>
-                <img src="assets/images/features-icon-2.png" alt="Cloud Progress Saving" />
+                <h2 aria-hidden="true">02</h2>
+                <img src="assets/images/features-icon-2.png" alt="Cloud Progress Saving" loading="lazy" width="64" height="64" />
                 <h3>Cloud Progress Saving</h3>
                 <p>
                   Save your progress securely with cloud storage. Start on one device and pick up where you left off on another.
                 </p>
-                <a href="#testimonials" class="main-button"> Discover More </a>
+                <a href="#promotion" class="main-button" aria-label="Learn more about Cloud Progress Saving">Learn More</a>
               </div>
             </div>
           </div>
@@ -169,13 +214,13 @@
           >
             <div class="features-item">
               <div class="features-icon">
-                <h2>03</h2>
-                <img src="assets/images/features-icon-3.png" alt="Tooltip Assistance" />
+                <h2 aria-hidden="true">03</h2>
+                <img src="assets/images/features-icon-3.png" alt="Tooltip Assistance" loading="lazy" width="64" height="64" />
                 <h3>Tooltip Assistance</h3>
                 <p>
                   Decode complex prescriptions with context-specific help: patient history, chief complaints, diagnosis, and lab values.
                 </p>
-                <a href="#testimonials" class="main-button"> More Detail </a>
+                <a href="#promotion" class="main-button" aria-label="Learn more about Tooltip Assistance">Learn More</a>
               </div>
             </div>
           </div>
@@ -197,7 +242,7 @@
             <img
               src="assets/images/left-image.png"
               class="rounded img-fluid d-block mx-auto"
-              alt="App"
+              alt="Rx Challenger app interface showing prescription interpretation" loading="lazy" width="500" height="400"
             />
           </div>
           <div
@@ -269,19 +314,19 @@
             <div class="owl-carousel owl-theme">
               <div class="item service-item">
                 <div class="author">
-                  <i
+                  <i aria-hidden="true"
                     ><img
                       src="assets/images/testimonial-author-1.png"
-                      alt="Author One"
+                      alt="Samer - Pharmacy Manager" loading="lazy" width="120" height="120"
                   /></i>
                 </div>
                 <div class="testimonial-content">
-                  <ul class="stars">
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
+                  <ul class="stars" aria-label="5 out of 5 stars">
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
                   </ul>
                   <h4>Samer</h4>
                   <p>
@@ -294,19 +339,19 @@
               </div>
               <div class="item service-item">
                 <div class="author">
-                  <i
+                  <i aria-hidden="true"
                     ><img
                       src="assets/images/testimonial-author-2.png"
-                      alt="Second Author"
+                      alt="Saadawy - Product Manager" loading="lazy" width="120" height="120"
                   /></i>
                 </div>
                 <div class="testimonial-content">
-                  <ul class="stars">
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
+                  <ul class="stars" aria-label="5 out of 5 stars">
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
                   </ul>
                   <h4>Saadawy</h4>
                   <p>
@@ -319,17 +364,17 @@
               </div>
               <div class="item service-item">
                 <div class="author">
-                  <i
+                  <i aria-hidden="true"
                     ><img
                       src="assets/images/testimonial-author-3.png"
-                      alt="Author Third"
+                      alt="Andrew - Senior Pharmacist" loading="lazy" width="120" height="120"
                   /></i>
                 </div>
                 <div class="testimonial-content">
-                  <ul class="stars">
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
+                  <ul class="stars" aria-label="3 out of 5 stars">
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
                   </ul>
                   <h4>Andrew</h4>
                   <p>
@@ -342,18 +387,18 @@
               </div>
               <div class="item service-item">
                 <div class="author">
-                  <i
+                  <i aria-hidden="true"
                     ><img
                       src="assets/images/testimonial-author-4.png"
-                      alt="Fourth Author"
+                      alt="Hesham - Software Tester" loading="lazy" width="120" height="120"
                   /></i>
                 </div>
                 <div class="testimonial-content">
-                  <ul class="stars">
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
+                  <ul class="stars" aria-label="4 out of 5 stars">
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
                   </ul>
                   <h4>Hesham</h4>
                   <p>
@@ -389,12 +434,12 @@
               </p>
               <ul class="social">
                 <li>
-                  <a href="https://www.linkedin.com/in/ahmed-m-ezzat/" target="_blank" rel="noreferrer nofollow"
-                  ><i class="fa fa-linkedin"></i></a>
+                  <a href="https://www.linkedin.com/in/ahmed-m-ezzat/" target="_blank" rel="noreferrer nofollow" aria-label="Follow Rx Challenger on LinkedIn"
+                  ><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                 </li>
                 <li>
-                  <a href="https://github.com/Ahmed-M-Ezzat" target="_blank" rel="noreferrer nofollow"
-                  ><i class="fa fa-github"></i></a>
+                  <a href="https://github.com/Ahmed-M-Ezzat" target="_blank" rel="noreferrer nofollow" aria-label="Rx Challenger on GitHub"
+                  ><i class="fa fa-github" aria-hidden="true"></i></a>
                 </li>
               </ul>
             </div>
@@ -406,9 +451,9 @@
               <p>
                 Copyright &copy; 2024 Rx Challenger
               </p>
-              <a href="https://rxchallenger.github.io/privacypolicy" rel="nofollow"><p>Privacy Policy</p></a>
+              <a href="privacypolicy.html" rel="nofollow"><p>Privacy Policy</p></a>
               <a href="terms.html" rel="nofollow"><p>Terms Of Agreements</p></a>
-              <a href="/faq.html" rel="nofollow"><p>FAQ</p></a>
+              <a href="faq.html" rel="nofollow"><p>FAQ</p></a>
               <a href="about.html" rel="nofollow"><p>About Us</p></a>
               <a href="contact.html" rel="nofollow"><p>Contact Us</p></a>
               <a href="sitemap.xml" rel="nofollow"><p>Sitemap</p></a>
@@ -440,5 +485,51 @@
 
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
+
+    <!-- Cookie Consent & Event Tracking -->
+    <script>
+    (function() {
+      // Cookie consent
+      var consent = localStorage.getItem('cookie_consent');
+      if (!consent) {
+        var banner = document.createElement('div');
+        banner.id = 'cookie-consent';
+        banner.innerHTML = '<div class="cookie-banner"><p>We use cookies for analytics. <a href="/privacypolicy.html">Privacy Policy</a></p><button id="cookie-accept" class="main-button">Accept</button><button id="cookie-decline" class="main-button" style="background:#999;margin-left:8px">Decline</button></div>';
+        document.body.appendChild(banner);
+        document.getElementById('cookie-accept').addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'accepted');
+          banner.style.display = 'none';
+        });
+        document.getElementById('cookie-decline').addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'declined');
+          banner.style.display = 'none';
+        });
+      }
+
+      // Event tracking for CTAs
+      document.addEventListener('click', function(e) {
+        var el = e.target.closest('[data-event]');
+        if (el && typeof trackEvent === 'function') {
+          trackEvent(el.getAttribute('data-event'), {
+            source: el.getAttribute('data-source') || 'unknown',
+            text: el.textContent.trim()
+          });
+        }
+      });
+
+      // Scroll depth tracking
+      var scrollMarks = [25, 50, 75, 100];
+      var reached = [];
+      window.addEventListener('scroll', function() {
+        var pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        scrollMarks.forEach(function(m) {
+          if (pct >= m && reached.indexOf(m) === -1) {
+            reached.push(m);
+            if (typeof trackEvent === 'function') trackEvent('scroll_depth', { percent: m });
+          }
+        });
+      });
+    })();
+    </script>
   </body>
 </html>

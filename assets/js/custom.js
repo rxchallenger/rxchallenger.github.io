@@ -136,11 +136,6 @@
           imageSrc: e(".cover").data("image"),
           zIndex: "1",
         }),
-        e("#preloader").animate({ opacity: "0" }, 600, function () {
-          setTimeout(function () {
-            e("#preloader").css("visibility", "hidden").fadeOut();
-          }, 300);
-        });
     }),
     e(window).on("resize", function () {
       o();

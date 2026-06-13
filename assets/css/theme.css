@@ -166,7 +166,7 @@ ul {
 p {
   font-size: 15px;
   line-height: 25px;
-  color: #888;
+  color: #555;
 }
 ::selection {
   background: #f1556a;
@@ -177,17 +177,17 @@ p {
   color: #fff;
 }
 a.main-button-slider {
-  background-color: #fba70b;
+  background-color: #d97706;
   transition: 0.3s;
 }
 a.main-button,
 button.main-button {
-  background-color: #f4813f;
+  background-color: #c2410c;
 }
 a.main-button-slider:hover,
 a.main-button:hover,
 button.main-button:hover {
-  background-color: #f1556a;
+  background-color: #a33e0a;
 }
 a.main-button {
   transition: 0.3s;
@@ -215,11 +215,11 @@ button.main-button {
 }
 .center-heading h2 em {
   font-style: normal;
-  color: #f4813f;
+  color: #c2410c;
 }
 .center-heading p {
   font-size: 15px;
-  color: #888;
+  color: #555;
   text-align: center;
 }
 .background-header {
@@ -230,7 +230,7 @@ button.main-button {
 }
 .background-header .logo,
 .background-header .main-nav .nav li a {
-  color: #1e1e1e !important;
+  color: #111 !important;
 }
 .background-header .main-nav .nav li:hover a,
 .background-header .nav li a.active {
@@ -622,12 +622,12 @@ button.main-button {
 .footer-content .right-content h2 em,
 .welcome-area .header-text h1 em {
   font-style: normal;
-  color: #fba70b;
+  color: #d97706;
 }
 .welcome-area .header-text p {
   font-weight: 300;
   font-size: 17px;
-  color: #7a7a7a;
+  color: #444;
   line-height: 30px;
   letter-spacing: 0.25px;
   margin-bottom: 40px;
@@ -1002,4 +1002,115 @@ footer .sub-footer p {
   100% {
     opacity: 0;
   }
+}
+
+/* ===== ACCESSIBILITY: Focus indicators ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #d97706;
+  outline-offset: 2px;
+}
+
+/* ===== Hero CTAs ===== */
+.hero-ctas {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* ===== Download Badges ===== */
+.download-badges {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 30px 0;
+}
+
+.download-badge {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.download-badge:hover {
+  transform: scale(1.05);
+}
+
+.download-badge img {
+  max-width: 189px;
+  height: auto;
+}
+
+/* ===== Cookie Consent Banner ===== */
+#cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  background: #1e1e1e;
+  padding: 15px 20px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+}
+
+.cookie-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cookie-banner p {
+  color: #fff;
+  margin: 0;
+  font-size: 14px;
+}
+
+.cookie-banner a {
+  color: #d97706;
+  text-decoration: underline;
+}
+
+.cookie-banner .main-button {
+  padding: 8px 20px;
+  font-size: 13px;
+}
+
+/* ===== Preloader removed ===== */
+#preloader {
+  display: none !important;
+}
+
+/* ===== Social links: ensure visible focus ===== */
+footer .social li a:focus-visible {
+  outline: 3px solid #d97706;
+  outline-offset: 2px;
+}
+
+/* ===== Improved nav link contrast ===== */
+.header-area .main-nav .nav li a {
+  color: #444;
+}
+
+/* ===== Skip navigation link ===== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #d97706;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 10001;
+  font-size: 14px;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
 }
