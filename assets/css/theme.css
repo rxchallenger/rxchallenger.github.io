@@ -377,7 +377,7 @@ button.main-button {
   width: 32px;
   height: 40px;
   text-indent: -9999em;
-  z-index: 99;
+  z-index: 101;
   right: 40px;
   display: none;
 }
@@ -509,7 +509,7 @@ button.main-button {
     display: block !important;
   }
   .header-area .main-nav {
-    overflow: hidden;
+    overflow: visible;
   }
   .header-area .main-nav .nav {
     float: none;
