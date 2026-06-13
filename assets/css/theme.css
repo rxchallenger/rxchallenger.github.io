@@ -751,8 +751,7 @@ footer .right-content {
   z-index: 9;
 }
 #testimonials .item .testimonial-content {
-  background: #f4813f;
-  background: linear-gradient(145deg, #f4813f 0, #f1556a 100%);
+  background: linear-gradient(145deg, #c2410c 0, #9a3412 100%);
   margin-left: 60px;
   padding: 40px 30px;
   text-align: center;
@@ -791,8 +790,7 @@ footer .right-content {
   top: 45%;
   color: #fff;
   right: -210px;
-  background: #f4813f;
-  background: linear-gradient(145deg, #f4813f 0, #f1556a 100%);
+  background: linear-gradient(145deg, #c2410c 0, #9a3412 100%);
   position: absolute;
 }
 .owl-carousel .owl-nav button.owl-prev span {
@@ -800,8 +798,7 @@ footer .right-content {
   top: 30%;
   color: #fff;
   right: -150px;
-  background: #f4813f;
-  background: linear-gradient(145deg, #f4813f 0, #f1556a 100%);
+  background: linear-gradient(145deg, #c2410c 0, #9a3412 100%);
   position: absolute;
 }
 @media screen and (max-width: 1060px) {
@@ -1017,6 +1014,27 @@ footer .sub-footer p {
   100% {
     opacity: 0;
   }
+}
+
+/* ===== Fix: Owl carousel visibility ===== */
+.owl-carousel {
+  display: block !important;
+}
+.owl-carousel .owl-stage-outer {
+  overflow: visible;
+}
+.owl-carousel .owl-item {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.owl-carousel .owl-item .owl-lazy {
+  opacity: 1 !important;
+}
+.owl-carousel.owl-loading {
+  opacity: 1 !important;
+}
+.owl-carousel.owl-hidden {
+  opacity: 1 !important;
 }
 
 /* ===== ACCESSIBILITY: Focus indicators ===== */
