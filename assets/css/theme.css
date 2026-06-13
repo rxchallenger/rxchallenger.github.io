@@ -234,7 +234,7 @@ button.main-button {
 }
 .background-header .main-nav .nav li:hover a,
 .background-header .nav li a.active {
-  color: #fba70b !important;
+  color: #d97706 !important;
 }
 .header-area {
   position: absolute;
@@ -832,6 +832,21 @@ footer {
   background-position: center center;
   background-size: cover;
   width: 100%;
+  position: relative;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 30, 30, 0.85);
+  z-index: 0;
+}
+footer .container {
+  position: relative;
+  z-index: 1;
 }
 footer .footer-content {
   padding: 120px 0;
@@ -888,7 +903,7 @@ footer .sub-footer a {
 }
 .footer-content .right-content a:hover,
 footer .sub-footer a:hover {
-  color: #fc3;
+  color: #fbbf24;
 }
 footer .social {
   overflow: hidden;
