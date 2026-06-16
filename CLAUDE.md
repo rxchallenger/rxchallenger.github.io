@@ -104,7 +104,7 @@ rxchallenger_website/
 
 ## Homepage Sections (index.html)
 
-1. **Hero** (`#welcome`) — 100vh, grid pattern bg, radial red glow, h1 + subtitle + 2 CTAs
+1. **Hero** (`#welcome`) — 100vh, grid pattern bg, radial red glow, **centered** h1 + subtitle + 2 CTAs
 2. **Download Badges** — Google Play + Windows badges with hover scale
 3. **Features** (`#features`) — 3 cards: Real Prescriptions, Cloud Progress, Tooltip Assistance
 4. **Why Rx Challenger** (`#why`) — 3 cards: Gamified Learning, Real-World Scenarios, Career Readiness
@@ -117,7 +117,7 @@ rxchallenger_website/
 ## Important Notes
 
 - **Logo markup:** `Rx<span>Challenger</span>` — "Challenger" gets `color: var(--accent)` (red) via CSS
-- **Cookie consent:** Uses `localStorage.cookie_consent`, inline script creates banner dynamically
+- **Cookie consent:** Uses `localStorage.cookie_consent`, inline script creates banner dynamically. Both Accept (`.main-button-slider`) and Decline (`.main-button`) buttons share consistent `padding`, `font-size`, and `border-radius: 50px` via `.cookie-banner` CSS rules
 - **Event tracking:** Elements with `data-event` attribute auto-track via delegated click listener
 - **Scroll depth:** Tracks 25/50/75/100% milestones via scroll event listener
 - **SEO:** JSON-LD structured data on every page (SoftwareApplication, Organization, FAQPage, etc.)
