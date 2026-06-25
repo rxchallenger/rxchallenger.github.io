@@ -1,33 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-   <url>
-      <loc>https://rxchallenger.github.io/</loc>
-      <lastmod>2024-12-04T15:39:38+00:00</lastmod>
-      <priority>1.00</priority>
-   </url>
-   <url>
-      <loc>https://rxchallenger.github.io/about.html</loc>
-      <lastmod>2024-12-04T15:39:38+00:00</lastmod>
-      <priority>0.80</priority>
-   </url>
-   <url>
-      <loc>https://rxchallenger.github.io/contact.html</loc>
-      <lastmod>2024-12-04T15:39:38+00:00</lastmod>
-      <priority>0.60</priority>
-   </url>
-   <url>
-      <loc>https://rxchallenger.github.io/faq.html</loc>
-      <lastmod>2024-12-04T15:39:38+00:00</lastmod>
-      <priority>0.80</priority>
-   </url>
-   <url>
-      <loc>https://rxchallenger.github.io/privacypolicy.html</loc>
-      <lastmod>2024-12-04T15:39:38+00:00</lastmod>
-      <priority>0.40</priority>
-   </url>
-   <url>
-      <loc>https://rxchallenger.github.io/terms.html</loc>
-      <lastmod>2024-12-04T15:39:38+00:00</lastmod>
-      <priority>0.40</priority>
-   </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <url>
+    <loc>https://rxchallenger.github.io/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://rxchallenger.github.io/assets/images/rx_325x325.png</image:loc>
+      <image:title>Rx Challenger</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://rxchallenger.github.io/about.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://rxchallenger.github.io/contact.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://rxchallenger.github.io/privacy.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://rxchallenger.github.io/terms.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://rxchallenger.github.io/disclaimer.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://rxchallenger.github.io/cookies.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://rxchallenger.github.io/blog/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rxchallenger.github.io/blog/prescription-abbreviations.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
+

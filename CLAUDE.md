@@ -6,124 +6,204 @@ Rx Challenger is a **static HTML/CSS/JS website** (no framework, no build system
 
 ## Tech Stack
 
-- **Pure static HTML** — 6 pages, hand-written (no templating)
-- **CSS** — Bootstrap 4/5 grid + custom `theme.css` (27KB) + `stylesheet.css` (Inter font import)
-- **JS** — jQuery 2.1.0, Owl Carousel, ScrollReveal, Waypoints, CounterUp, Popper.js
-- **Fonts** — Inter (Google Fonts, all weights 100–900) — aligned with IMC Hub ecosystem
+- **Pure static HTML** — 10 pages, hand-written (no templating)
+- **CSS** — `critical.css` (inlined above-the-fold) + `design-system.css` (full design system, 33KB)
+- **JS** — Single `app.js` (10KB, vanilla — no jQuery, no Bootstrap, no libraries)
+- **Fonts** — Inter (Google Fonts, weights 400–900)
+- **PWA** — `manifest.json` + `sw.js` (vanilla service worker, no Workbox)
 - **Analytics** — Google Analytics (gtag.js, ID: `G-TPCC6T9RZ7`)
 - **No package.json, no npm, no build step**
 
-## Design System (Post-June 2026 Redesign)
+## Design System
 
 Dark-first design aligned with IMC Hub (`https://imc-hub.github.io/`).
 
-### Color Palette (CSS custom properties in `theme.css`)
+### Color Palette (CSS custom properties in `design-system.css`)
 
 | Token | Value | Usage |
 |-------|-------|-------|
-| `--bg-primary` | `#000000` | Page background |
-| `--bg-secondary` | `#121212` | Section backgrounds |
-| `--bg-card` | `#161616` | Card surfaces |
-| `--bg-card-hover` | `#1e1e1e` | Card hover state |
-| `--text-primary` | `#ffffff` | Headings |
-| `--text-secondary` | `#a0a0a0` | Body text |
-| `--text-muted` | `#666666` | Sub-footer, meta text |
-| `--accent` | `#dc2626` | CTAs, highlights, active states |
-| `--accent-hover` | `#ef4444` | Button hover |
-| `--border` | `#2a2a2a` | Card/section borders |
+| `--color-dark-950` | `#050507` | Page background |
+| `--color-dark-900` | `#0a0a0f` | Section alt backgrounds |
+| `--color-dark-800` | `#111118` | Card surfaces |
+| `--color-dark-700` | `#1a1a24` | Card hover / elevated surfaces |
+| `--color-gold` | `#f5a623` | Primary accent, CTAs, highlights |
+| `--color-gold-light` | `#ffd080` | Gold hover state |
+| `--color-text-primary` | `#f0f0f5` | Headings |
+| `--color-text-secondary` | `#c8c8d0` | Body text |
+| `--color-text-muted` | `#8888a0` | Meta text, subtitles |
+| `--color-border` | `#2a2a3a` | Card/section borders |
 
 ### Typography
 
-- **Font:** Inter (Google Fonts), weights 100–900
-- **Hero h1:** 56px / 900 weight / -1px letter-spacing
-- **Section h2:** 38px / 800 weight / -0.5px letter-spacing
-- **Body:** 15px / 28px line-height
-- **Nav:** 13px / uppercase / 1px letter-spacing
+- **Font:** Inter (Google Fonts), weights 400–900
+- **Hero h1:** clamp(2.25rem, 5vw, 3.5rem) / 800 weight
+- **Section h2:** clamp(1.75rem, 3.5vw, 2.5rem) / 800 weight
+- **Body:** 1rem / 1.75 line-height
+- **Nav:** 0.9375rem / 500 weight
 
 ### Border Radius
 
-`--radius-sm: 8px` | `--radius-md: 12px` | `--radius-lg: 16px` | `--radius-xl: 24px`
-
-### Key CSS Classes
-
-- `.reveal` / `.reveal.visible` — Scroll-triggered fade-in with Intersection Observer
-- `.reveal-delay-1` through `.reveal-delay-5` — Staggered animation delays
-- `.main-button` — Outlined red button (transparent bg, red border)
-- `.main-button-slider` — Solid red button with glow shadow
-- `.features-item` — Dark card with hover lift + red top border glow
-- `.why-card` / `.audience-card` — Simpler dark cards with icon + text
+`--radius-sm: 0.5rem` | `--radius-md: 0.75rem` | `--radius-lg: 1rem` | `--radius-xl: 1.5rem`
 
 ## File Structure
 
 ```
 rxchallenger_website/
-|-- CLAUDE.md                  # This file
-|-- index.html                 # Homepage (hero, features, why, journey, audience, testimonials, CTA)
-|-- about.html                 # About page
-|-- contact.html               # Contact page
-|-- faq.html                   # FAQ (with FAQPage JSON-LD)
-|-- privacypolicy.html         # Privacy policy (unchanged)
-|-- terms.html                 # Terms (unchanged)
-|-- robots.txt
-|-- sitemap.xml
-|-- app-ads.txt
-|-- googlecebb3f7c60e5209f.html  # Google site verification
+|-- CLAUDE.md                      # This file
+|-- index.html                     # Homepage (hero, features, screenshots, benefits,
+|                                  #   journey, audience, testimonials, FAQ, CTA)
+|-- about.html                     # About page (mission, values)
+|-- contact.html                   # Contact page (form + sidebar)
+|-- privacy.html                   # Privacy policy
+|-- terms.html                     # Terms & conditions
+|-- disclaimer.html                # Disclaimer
+|-- cookies.html                   # Cookie policy
+|-- robots.txt                     # Crawler directives (GPTBot, ClaudeBot, AdsBot-Google)
+|-- sitemap.xml                    # All pages + image sitemap
+|-- manifest.json                  # PWA manifest (shortcuts: Features, FAQ, Blog)
+|-- sw.js                          # Vanilla service worker
+|-- offline.html                   # PWA offline fallback
 |-- favicon.ico
-|-- download/
-|   |-- rxchallenger v1.0.0.2.exe
+|-- blog/
+|   |-- index.html                 # Blog listing (3 post cards)
+|   |-- prescription-abbreviations.html  # Sample article (TOC, reading progress, related)
 |-- assets/
     |-- css/
-    |   |-- theme.css          # MAIN stylesheet — all custom styles (27KB)
-    |   |-- stylesheet.css     # Inter font @import only (168 bytes)
-    |   |-- bootstrap.min.css  # Bootstrap framework
-    |   |-- font-awesome.css   # Font Awesome icons
-    |   |-- owl-carousel.css   # Carousel styles
-    |   |-- flex-slider.css    # Included but unused
+    |   |-- critical.css           # Inlined above-the-fold CSS (7KB)
+    |   |-- design-system.css      # Full design system (33KB)
     |-- js/
-    |   |-- custom.js          # Main JS — carousel, sticky nav, smooth scroll, Intersection Observer
-    |   |-- jquery-2.1.0.min.js
-    |   |-- bootstrap.min.js
-    |   |-- popper.js
-    |   |-- owl-carousel.js
-    |   |-- scrollreveal.min.js
-    |   |-- waypoints.min.js
-    |   |-- jquery.counterup.min.js
-    |   |-- imgfix.min.js
-    |-- images/                 # All PNG assets + .import files (Godot metadata)
-    |-- fonts/                  # Icon fonts (Flaticon, FontAwesome, FlexSlider, Slick)
+    |   |-- app.js                 # Vanilla JS (sticky header, reveal, mobile nav,
+    |                              #   FAQ accordion, cookie consent, floating social,
+    |                              #   PWA prompt, reading progress)
+    |-- icons/
+    |   |-- apple-touch-icon.png
+    |   |-- favicon-32.png
+    |   |-- icon-192.png
+    |   |-- icon-512.png
+    |   |-- icon-maskable.png
+    |-- images/                     # PNG assets + .import files (Godot metadata)
 ```
 
 ## Page Structure (All Pages)
 
 1. Skip link (`<a href="#main-content" class="skip-link">`)
-2. Sticky header (`<header class="header-area header-sticky">`) with logo "RxChallenger" and nav
-3. `<main id="main-content">` with page content
-4. Footer (`<footer id="contact-us">`) with social links + sub-footer links
-5. Scripts: jQuery → Popper → Bootstrap → Owl Carousel → ScrollReveal → Waypoints → CounterUp → imgfix → custom.js
-6. Inline `<script>` for cookie consent + event tracking + scroll depth
+2. Sticky header (`<header class="site-header">`) with brand mark + nav + menu-toggle
+3. Mobile nav (`<div class="mobile-nav">`) — dialog with close button
+4. `<main id="main-content">` with page content
+5. Footer (`<footer class="site-footer" id="footer">`) with footer-grid (4 columns on desktop) + footer-bottom
+6. Floating social (`<aside class="floating-social">`) — Instagram, Facebook, LinkedIn; visible only when footer is off-screen (IntersectionObserver)
+7. Cookie banner (`<div class="cookie-banner">`) — Accept / Preferences / Decline; localStorage-based
+8. PWA prompt (`<div class="pwa-prompt">`) — shown on `beforeinstallprompt` event
+9. Scripts: `app.js` (deferred) + optional service worker registration
+
+## Brand Markup
+
+```html
+<a href="/" class="brand" aria-label="Rx Challenger home">
+  <span class="brand-mark" aria-hidden="true">Rx</span>
+  Rx <span class="brand-accent">Challenger</span>
+</a>
+```
+
+- `.brand-mark` — gold background square with "Rx" text
+- `.brand-accent` — gold colored text
+
+## Navigation
+
+All pages share the same nav pattern:
+```html
+<nav class="nav" aria-label="Primary">
+  <a href="/#features">Features</a>
+  <a href="/#how">How it works</a>
+  <a href="/#faq">FAQ</a>
+  <a href="/blog/">Blog</a>
+  <a href="/contact.html">Contact</a>
+</nav>
+```
+
+Mobile nav includes a close button and a "Download Free" CTA.
 
 ## Homepage Sections (index.html)
 
-1. **Hero** (`#welcome`) — 100vh, grid pattern bg, radial red glow, **centered** h1 + subtitle + 2 CTAs
-2. **Download Badges** — Google Play + Windows badges with hover scale
-3. **Features** (`#features`) — 3 cards: Real Prescriptions, Cloud Progress, Tooltip Assistance
-4. **Why Rx Challenger** (`#why`) — 3 cards: Gamified Learning, Real-World Scenarios, Career Readiness
-5. **Promotion** (`#promotion`) — App screenshot + 3 detailed feature items (Patient History, Chief Complaints, Diagnosis)
-6. **Learning Journey** (`#journey`) — 4-step timeline with numbered red dots
-7. **Audience** (`#audience`) — 6 cards: Students, Graduates, Managers, Pharmacists, Interns, Schools
-8. **Testimonials** (`#testimonials`) — Owl Carousel with 4 reviews, gold stars, red author borders
-9. **CTA Section** — "Ready to Level Up?" with download buttons
+1. **Hero** — Full-viewport, grid pattern bg, radial gold glow, h1 + subtitle + 2 CTAs + app screenshot SVG placeholder
+2. **Features** (`#features`) — 6 cards in 3×2 grid with icons
+3. **Screenshots** (`#screenshots`) — 3 phone mockup SVG placeholders
+4. **Benefits** (`#how`) — 2-column layout with numbered steps
+5. **Learning Journey** (`#journey`) — 4-step timeline with gold numbered dots
+6. **Audience** (`#audience`) — 6 cards: Students, Graduates, Managers, Pharmacists, Interns, Schools
+7. **Testimonials** (`#testimonials`) — 4 review cards with star ratings + author avatars
+8. **FAQ** (`#faq`) — Accordion with 5 items (grid-template-rows: 0fr → 1fr pattern)
+9. **CTA / Download** (`#download`) — "Download Free" with Google Play + Windows badges
+
+## Subpage Pattern
+
+All subpages (about, contact, privacy, terms, disclaimer, cookies) share:
+- `.subpage-hero` section with breadcrumb nav
+- `.section` > `.container` > `.prose` for legal pages (max-width: 48rem)
+- `.section` > `.container` > `.grid-2` for contact page (form + sidebar)
+- Same header/footer/floating-social/cookie-banner as homepage
+
+## Blog System
+
+- `blog/index.html` — Listing page with `.blog-card` items (3-column grid)
+- `blog/post-slug.html` — Article template with:
+  - `.subpage-hero` + breadcrumb
+  - `.grid-2` layout: article body (`.article-body`) + sticky sidebar (`.toc`)
+  - Reading progress bar (`.reading-progress`)
+  - Related articles section (`.grid-3`)
+  - JSON-LD `Article` schema
+
+## Key Components
+
+### Reveal-on-scroll
+`.reveal` elements start at `opacity:0; transform:translateY(20px)` and transition to visible via IntersectionObserver. Delays: `.delay-100` through `.delay-500`.
+
+### FAQ Accordion
+Uses `details`/`summary` or `grid-template-rows: 0fr → 1fr` transition on `.faq-answer`.
+
+### Cookie Consent
+- `localStorage.getItem('cookie_consent')` stores `'accepted'` | `'declined'`
+- Banner auto-hidden after choice
+- Google Analytics only fires after consent
+
+### Floating Social
+- Hidden by default via `transform: translateY(100px)`
+- IntersectionObserver on `#footer`: when footer leaves viewport, social bar slides up; when footer re-enters, it slides down
+
+### PWA Install Prompt
+- `beforeinstallprompt` event stores trigger, shows `.pwa-prompt` dialog
+- "Install" button calls `prompt.prompt()`
+- "Not now" and close buttons dismiss via `data-pwa-close`
+
+### AdSense Placeholders
+`.ad-slot` containers with dashed border min-height — ready for `data-ad-client` / `data-ad-slot` attributes. No actual AdSense IDs are inserted.
+
+## SEO
+
+- **JSON-LD** on every page: `SoftwareApplication`, `Organization`, `WebSite`, `WebPage`, `AboutPage`, `ContactPage`, `CollectionPage`, `Article`
+- **OG tags:** type, url, title, description, image (325×325 PNG)
+- **Twitter cards:** `summary_large_image`
+- **Canonical URLs** on every page
+- **robots.txt:** allows GPTBot, ClaudeBot, AdsBot-Google
+- **sitemap.xml:** all page URLs + image sitemap annotation
+
+## Accessibility
+
+- Skip link to `#main-content`
+- `aria-label` on nav, header icons, social links, cookie dialog
+- `aria-current="page"` on active nav item
+- `aria-expanded` on mobile menu toggle
+- `prefers-reduced-motion` disables all transitions/animations
+- Semantic HTML5: `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<aside>`, `<footer>`
+- Color contrast ≥ 4.5:1 for body text
 
 ## Important Notes
 
-- **Logo markup:** `Rx<span>Challenger</span>` — "Challenger" gets `color: var(--accent)` (red) via CSS
-- **Cookie consent:** Uses `localStorage.cookie_consent`, inline script creates banner dynamically. Both Accept (`.main-button-slider`) and Decline (`.main-button`) buttons share consistent `padding`, `font-size`, and `border-radius: 50px` via `.cookie-banner` CSS rules
-- **Event tracking:** Elements with `data-event` attribute auto-track via delegated click listener
-- **Scroll depth:** Tracks 25/50/75/100% milestones via scroll event listener
-- **SEO:** JSON-LD structured data on every page (SoftwareApplication, Organization, FAQPage, etc.)
-- **CSP:** Content-Security-Policy meta tag allows Google Tag Manager, Google Fonts, Google Analytics
-- **No inline styles on pages** — all styling via `theme.css` custom properties
-- **`.import` files** in `assets/images/` and `assets/fonts/` are Godot engine metadata — do not delete
+- **`.import` files** in `assets/images/` are Godot engine metadata — do not delete
+- **SVG sprite** is inlined in every page (single `<svg>` with `<defs>` containing `<symbol>` elements)
+- **No actual AdSense IDs** are inserted — placeholder `.ad-slot` divs only
+- **Blog links** to `pharmacy-exam-prep.html` and `new-graduate-tips.html` are intentional placeholders for future posts
+- **App screenshots** are inline SVG placeholders — replace with real PNGs when available
 
 ## Deployment
 
@@ -133,9 +213,11 @@ rxchallenger_website/
 
 ## Conventions for Future Changes
 
-- Use CSS custom properties from `theme.css` — don't hardcode colors
-- Use `.reveal` class + Intersection Observer for scroll animations (not ScrollReveal library)
+- Use CSS custom properties from `design-system.css` — don't hardcode colors
+- Use `.reveal` class + Intersection Observer for scroll animations (no libraries)
 - Maintain `prefers-reduced-motion` support for all animations
 - Keep skip links and `aria-label` attributes for accessibility
 - Preserve JSON-LD structured data when modifying page content
-- Test mobile responsiveness at 991px, 810px, and 480px breakpoints
+- Every page must include: mobile-nav, floating-social, cookie-banner, app.js
+- Test mobile responsiveness at 820px (mobile nav breakpoint) and 480px
+- Blog posts follow the `blog/post-slug.html` template pattern

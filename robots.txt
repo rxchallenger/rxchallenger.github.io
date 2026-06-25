@@ -1,3 +1,21 @@
 User-agent: *
-Disallow: 
+Allow: /
+Disallow: /download/
+Disallow: /*.json$
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
 Sitemap: https://rxchallenger.github.io/sitemap.xml
